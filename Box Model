@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box-Model Element</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .box-model-demo{
+            width: 300px;
+            height: 200px;
+            padding: 20px;
+            border: 5px solid #333;
+            margin: 30px;
+            background-color: #f0f0f0;
+        }
+        .content-box{
+            box-sizing: content-box;
+            background-color: #ffcccc;
+        }
+        .border-box{
+            box-sizing: border-box;
+            background-color: #ccffcc;
+        }
+        .box-model-demo p{
+            margin: 0;
+        }
+        .highlight{
+            background-color: aqua;
+            display: inline-block;
+        }
+        .inline-example {
+        display: inline;
+        background-color: #cce6ff;
+        padding: 10px;
+        margin: 10px;
+        /*Inline elements ignore width and height*/
+        width: 200px;
+        height: 100px;
+        }
+        .block-example{
+        display: block;
+        background-color: #ffccff;
+        padding: 10px;
+        margin: 10px;
+        width: 200px;
+        height: 100px;
+      }
+    </style>
+</head>
+<body>
+    <h1> css box model example</h1>
+    <h2>content-box default</h2>
+    <div class="box-model-demo content-box">
+        <p>This is a content-box element</p>
+        <p>width 300px + 40px(padding)+ 10px(border)=350px</p>
+        <p>height 200px + 40px(padding)+ 10px(border)=250px</p>
+    </div>
+    <div class="box-model-demo border-box">
+        <p>This is a border-box element</p>
+        <p>width: 300px(including padding & boxing)</p>
+        <p>height: 200px(including padding & boxing)</p>
+    </div>
+    <h2>Inline vs Box Elements</h2>
+    <p>This is a paragraph with an
+        <span class="inline-example">inline element</span>
+        only take as much width as necessary and allow other elements next to them
+    </p>
+    <div class="block-example">This is a block level element. it takes up the full width available and creates a new line before & after it.</div>
+    <h2>Box model components</h2>
+    <p>The box model consistes of:</p>
+    <ul>
+        <li><span class="highlight">content</span>: The actual content of the box, where text & images appear</li>
+        <li><span class="highlight">padding</span>: Clears an area around the content(inside the border)</li>
+        <li><span class="highlight">border</span>: A border that goes around padding & content</li>
+        <li><span class="highlight">margin</span>: Clears an area outside the border</li>
+    </ul>
+</body>
+</html>
